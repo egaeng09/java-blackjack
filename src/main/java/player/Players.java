@@ -3,6 +3,7 @@ package player;
 import card.Card;
 import card.Deck;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -33,7 +34,7 @@ public class Players {
     }
 
     public Map<String, List<Card>> openInitialCards() {
-        Map<String, List<Card>> initialCards = new HashMap<>();
+        Map<String, List<Card>> initialCards = new LinkedHashMap<>();
         players.forEach(player -> initialCards.put(player.getName(), player.openInitialCards()));
 
         return initialCards;
